@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+// Definindo estados da calculadora
 function mapState(state){
 	return{
 		expr: state.expr
 	};
 }
 
+// Definindo botão especial para as teclas da calculadora
 const CalcBut = ({onPress, title}) => (
 	<TouchableOpacity onPress={onPress} style={styles.CalcBut}>
     	<Text style={{textAlign: 'center'}}>{title}</Text>
   	</TouchableOpacity>
 )
 
+// Definindo chamadas de ação para o redutor
 var n0 = {type: "n0"},
 	n1 = {type: "n1"},
 	n2 = {type: "n2"},
@@ -34,6 +37,7 @@ var n0 = {type: "n0"},
 	del = {type: "del"},
 	clr = {type: "clr"};
 
+// Conectando chamadas de ação no front às execuções do redutor
 function mapDispatch(dispatch){
 	return{
 		num0: () => dispatch(n0),
@@ -58,6 +62,7 @@ function mapDispatch(dispatch){
 	}
 }
 
+// Definindo componente Calculadora
 class Calculator extends Component{
 	render(){
 		return(
@@ -160,6 +165,7 @@ class Calculator extends Component{
 	}
 }
 
+// Conectando tudo
 var connected = connect(
 	mapState,
 	mapDispatch,
@@ -167,6 +173,7 @@ var connected = connect(
 
 export default connected;
 
+// CSS dos componentes associados
 const styles = StyleSheet.create({
   calculator: {
     width: '58%',

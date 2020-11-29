@@ -1,6 +1,7 @@
 import { evaluate } from 'mathjs';
 import { Alert } from 'react-native';
 
+// Definindo ações sobre a calculadora, para cada chamada de botão
 function calculator(state, action){
 	if(state == undefined) return {expr: ''};
 	var expr = state.expr;

@@ -1,3 +1,4 @@
+// Importando pacotes necessários
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import calculator from './reducer';
@@ -7,8 +8,10 @@ import Calculator from './Calculator';
 import { StyleSheet, View, Button, Alert } from 'react-native';
 import { Text } from 'react-native-elements';
 
+// Inicializando a calculadora
 var store = createStore(calculator);
 
+// Renderizando elementos/componentes da aplicação
 export default function App(){
   return (
     <View style={styles.container}>
@@ -27,6 +30,7 @@ export default function App(){
   );
 }
 
+// CSS da página
 const styles = StyleSheet.create({
   container: {
     flex: 1,
