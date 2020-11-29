@@ -1,11 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import calculator from './reducer';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import Calculator from './Calculator';
+import { StyleSheet, View, Button, Alert } from 'react-native';
+import { Text } from 'react-native-elements';
 
-export default function App() {
+var store = createStore(calculator);
+
+export default function App(){
   return (
     <View style={styles.container}>
-      <Text>Este texto é apenas um exemplo.{"\n"}Amigo.</Text>
+      <Text h4>Bem-vindo(a) à Calculadora Web!</Text>
+      <Text>{"\n"}Agora disponível para celular.{"\n"}</Text>
+      <Button
+        onPress={() => Alert.alert('Feita por Vinícius Brito Bastos Antunes (COMP-22)')}
+        title="Autoria"
+      />
+      <Text>{"\n"}</Text>
+      <Provider store={store}>
+        <Calculator />
+      </Provider>
       <StatusBar style="auto" />
     </View>
   );
