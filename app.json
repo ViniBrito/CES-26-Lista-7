@@ -7,6 +7,8 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "Calculadora básica que atende aos requisitos da lista 7.",
+    "githubUrl": "https://github.com/ViniBrito/CES-26-Lista-7"
   }
 }
